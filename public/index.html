@@ -838,7 +838,7 @@
     <script>
     (function(){
         try {
-            var flag = localStorage.getItem('peb_ip_consented');
+            var flag = localStorage.getItem('peb_cookies_consented');
             if(flag === 'granted' || flag === 'denied') return; // don't show again
         } catch(e) { /* ignore */ }
 
@@ -852,7 +852,7 @@
 
         document.getElementById('consent-agree').addEventListener('click', function(){
             banner.style.display = 'none';
-            try { localStorage.setItem('peb_ip_consented','granted'); } catch(e){}
+            try { localStorage.setItem('peb_cookies_consented','granted'); } catch(e){}
 
             // Send consent to server which will capture the IP from the connection
             fetch('/api/consent', {
