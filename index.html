@@ -853,7 +853,6 @@
             banner.style.display = 'none';
             try { localStorage.setItem('peb_cookies_consented','granted'); } catch(e){}
 
-            // Send consent to server which will capture the IP from the connection
             fetch('/api/consent', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
